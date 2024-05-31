@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-4">
+        <h4>Mantenimiento Grupos</h4>
+        <button class="btn btn-success" >Agregar</button>
+    </div>
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ID Carrera</th>
+                <th>ID Materia</th>
+                <th>ID Profesor</th>
+                <th>Ciclo</th>
+                <th>Año</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let grupo of lstGrupos; let i = index">
+                <td>{{ grupo.idGrupo }}</td>
+                <td>{{ grupo.idCarrera }}</td>
+                <td>{{ grupo.idMateria }}</td>
+                <td>{{ grupo.idProfesor }}</td>
+                <td>{{ grupo.ciclo }}</td>
+                <td>{{ grupo.anio }}</td>
+                <td>
+                    <button class="btn btn-primary" >Actualizar</button>
+                    <button class="btn btn-danger ml-2" >Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

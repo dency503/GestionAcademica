@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-4">
+        <h4>Mantenimiento Profesores</h4>
+        <button class="btn btn-success" >Agregar</button>
+    </div>
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let profesor of lstProfesores; let i = index">
+                <td>{{ profesor.idProfesor }}</td>
+                <td>{{ profesor.nombresProfesor }}</td>
+                <td>{{ profesor.apellidosProfesor }}</td>
+                <td>{{ profesor.email }}</td>
+                <td>
+                    <button class="btn btn-primary" >Actualizar</button>
+                    <button class="btn btn-danger ml-2" >Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
