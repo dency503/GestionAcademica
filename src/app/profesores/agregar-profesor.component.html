@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="mt-4">
+      <h3>Agregar profesor</h3>
+    </div>
+    <form class="mt-4" [formGroup]="form">
+      <div class="form-group mt-2">
+        <label>Código profesor</label>
+        <input formControlName="codigoProfesor" type="text" class="form-control"
+          [class.is-invalid]="validateField('codigoProfesor')" placeholder="Código del profesor">
+        <div class="invalid-feedback">
+          @if(validateField('codigoProfesor')){
+            <span>Este campo es requerido</span>
+          }
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label>Nombres</label>
+        <input formControlName="nombresProfesor" type="text" class="form-control"
+          [class.is-invalid]="validateField('nombresProfesor')" placeholder="Nombres del profesor">
+        <div class="invalid-feedback">
+          @if(validateField('nombresProfesor')){
+            <span>Este campo es requerido</span>
+          }
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label>Apellidos</label>
+        <input formControlName="apellidosProfesor" type="text" class="form-control"
+          [class.is-invalid]="validateField('apellidosProfesor')" placeholder="Apellidos del profesor">
+        <div class="invalid-feedback">
+          @if(validateField('apellidosProfesor')){
+            <span>Este campo es requerido</span>
+          }
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label>Correo</label>
+        <input formControlName="correoProfesor" type="text" class="form-control"
+          [class.is-invalid]="validateField('correoProfesor')" placeholder="Correo del profesor">
+        <div class="invalid-feedback">
+          @if(validateField('correoProfesor')){
+            <span>Este campo es requerido</span>
+          }
+        </div>
+        <div class="invalid-feedback">
+          @if(form.get('correoProfesor')?.errors?.['email']){
+            <span>Correo no válido</span>
+          }
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="onSubmit()">
+          Confirmar información
+        </button>
+      </div>
+    </form>
+  </div>
+  

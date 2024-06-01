@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="mt-4">
+      <h3>Agregar grupo</h3>
+    </div>
+    <form class="mt-4" [formGroup]="form">
+      <div class="form-group mt-2">
+        <label>Ciclo</label>
+        <input formControlName="ciclo" type="number" class="form-control"
+               [class.is-invalid]="validateField('ciclo')" placeholder="Ciclo del grupo">
+        <div class="invalid-feedback">
+            @if(validateField('ciclo')){
+                <span>Este campo es requerido</span>
+                }
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label>Año</label>
+        <input formControlName="anio" type="number" class="form-control"
+               [class.is-invalid]="validateField('anio')" placeholder="Año del grupo">
+        <div class="invalid-feedback">
+          @if(validateField('anio')){
+            <span>Este campo es requerido</span>
+            }
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary"
+                [disabled]="!form.valid" (click)="onSubmit()">Confirmar información</button>
+      </div>
+    </form>
+  </div>
+  
