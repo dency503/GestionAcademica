@@ -8,7 +8,7 @@ export const endpoints ={
    eliminarEstudiante: environment.serverURL
     .concat("estudiantes/eliminarEstudiante/:idEstudiante"),
     obtenerEstudiantePorID: environment.serverURL
-    .concat("estudiantes/obtenerEstudiantePorID/"),
+    .concat("estudiantes/obtenerEstudiantePorID/:idEstudiante"),
     obtenerEstudiantes: environment.serverURL
     .concat("estudiantes/obtenerEstudiantes"),
     agregarMateria: environment.serverURL.concat('materias/agregarMateria'),
